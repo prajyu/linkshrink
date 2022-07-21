@@ -1,10 +1,6 @@
-
 # Link Shrink
 
 An API to shrink your links and makes your url intact.
-
-
-
 
 ## API Reference
 
@@ -14,25 +10,24 @@ An API to shrink your links and makes your url intact.
   POST /shrink
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `body` | `json` |  {url: "your url here" } |
+| Parameter | Type   | Description             |
+| :-------- | :----- | :---------------------- |
+| `body`    | `json` | {url: "your url here" } |
 
 #### Stretch your short URL
 
 ```http
-  GET /stretch/${shortUrl}
+  GET /s/${shortUrl}
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `shortUrl`      | `string` |  shortUrl to convert to absolute |
-
-
+| Parameter  | Type     | Description                     |
+| :--------- | :------- | :------------------------------ |
+| `shortUrl` | `string` | shortUrl to convert to absolute |
 
 ## Run Locally
 
-You need to install mongoDB driver locally or add .env file and credentials of db 
+You need to install mongoDB driver locally or add .env file and credentials of db
+
 ```
 USER=username
 PASSWORD=password
@@ -62,4 +57,3 @@ Start the server
 ```bash
   npm run start
 ```
-
