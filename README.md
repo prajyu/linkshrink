@@ -32,7 +32,12 @@ An API to shrink your links and makes your url intact.
 
 ## Run Locally
 
-You need to install mongoDB driver locally 
+You need to install mongoDB driver locally or add .env file and credentials of db 
+```
+USER=username
+PASSWORD=password
+DATABASE=database name
+```
 
 Clone the project
 
