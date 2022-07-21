@@ -1,5 +1,6 @@
 // require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const { crc32 } = require("crc");
 const { MongoClient } = require("mongodb");
 const { URL } = require("url");
@@ -10,6 +11,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 let collection = null;
 
@@ -34,7 +36,7 @@ let main = async () => {
 
 main();
 
-app.get("/stretch/:shortUrl", async (req, res) => {
+app.get("/s/:shortUrl", async (req, res) => {
   let { shortUrl } = req.params;
   let result = await findUrl(shortUrl);
   if (result.length > 0) return res.redirect(result[0]?.url);
