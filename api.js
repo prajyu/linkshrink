@@ -4,7 +4,6 @@ const { MongoClient } = require("mongodb");
 const { URL } = require("url");
 
 const url = "mongodb://localhost:27017";
-const client = new MongoClient(url);
 
 const dbName = "absoluteUrls";
 
@@ -16,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 let collection = null;
 
 let main = async () => {
+  const client = new MongoClient(process.env.URL || url);
   await client.connect();
   const db = client.db(dbName);
   collection = db.collection("urls");
@@ -40,6 +40,10 @@ app.post("/shrink", async (req, res) => {
   let status = await addUrl(url, shortenedUrl);
   if (status?.acknowledged) return res.json({ shortenedUrl });
   else return res.json({ error: true });
+});
+
+app.use("/", (req, res) => {
+  res.status(404).json({ 404: "No path found" });
 });
 
 let verifyUrl = (url) => {
