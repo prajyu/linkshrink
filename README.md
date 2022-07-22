@@ -2,6 +2,8 @@
 
 An API to shrink your links and makes your url intact.
 
+**[DEMO APP](https://shrinkinglinks.web.app/)**
+
 ## API Reference
 
 #### Shrink your URL
