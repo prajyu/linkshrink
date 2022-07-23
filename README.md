@@ -59,3 +59,7 @@ Start the server
 ```bash
   npm run start
 ```
+
+## How to build this API 
+
+**[Tutorial](https://dev.to/prajyu/how-to-make-a-url-shortner-1a20)**
